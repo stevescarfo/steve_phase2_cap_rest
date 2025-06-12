@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getAll, post, put, deleteById } from "./memdb.js";
+import { getAll, post, put, deleteById } from "./restdb.js";
 import "./App.css";
 import CustomerList from "./component/CustomerList.js";
 import CustomerForm from "./component/CustomerForm.js";
@@ -21,7 +21,7 @@ export function App() {
 
   function getCustomers() {
     log("in getCustomers()");
-    setCustomers(getAll());
+    getAll(setCustomers);
   }
 
   function handleListClick(item) {
@@ -32,7 +32,7 @@ export function App() {
   function handleInputChange(event) {
     log("in handleInputChange()");
     const { name, value } = event.target;
-    setFormObject(prev => ({ ...prev, [name]: value }));
+    setFormObject((prev) => ({ ...prev, [name]: value }));
   }
 
   function onCancelClick() {
@@ -41,8 +41,11 @@ export function App() {
   }
 
   function onDeleteClick() {
+    let postOpCallback = () => {
+      setFormObject(blankCustomer);
+    };
     if (formObject.id >= 0) {
-      deleteById(formObject.id);
+      deleteById(formObject.id, postOpCallback);
       getCustomers(); // make sure UI updates!
     }
     setFormObject(blankCustomer);
