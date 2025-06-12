@@ -1,6 +1,6 @@
-const baseURL = "http://localhost:4000/customers";
+//const baseURL = "http://localhost:4000/customers";
 
-// const baseURL = "https://api.jsonbin.io/v3/qs/684b2a4b8960c979a5a8ca2d";
+const baseURL = "https://api.jsonbin.io/v3/qs/684b2a4b8960c979a5a8ca2d";
 
 export async function getAll(setCustomers) {
   const myInit = {
