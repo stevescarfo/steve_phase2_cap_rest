@@ -5,7 +5,7 @@ const baseURL = "https://api.jsonbin.io/v3/qs/684b2a4b8960c979a5a8ca2d";
 export async function getAll(setCustomers) {
   const myInit = {
     method: "GET",
-    mode: "cors",
+    //mode: "cors",
   };
   const fetchData = async (url) => {
     try {
