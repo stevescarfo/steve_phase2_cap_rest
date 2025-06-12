@@ -15,6 +15,7 @@ export async function getAll(setCustomers) {
       }
       const data = await response.json();
       setCustomers(data.record);
+      //setCustomers(data);
     } catch (error) {
       alert(error);
     }
