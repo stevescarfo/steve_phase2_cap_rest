@@ -56,10 +56,10 @@ export function App() {
     if (mode === "Add") {
       post(formObject);
     } else {
-      put(formObject.id, formObject);
+      put(formObject, formObject);
+      // put(formObject.id, formObject);
     }
-    getCustomers(setCustomers);
-    //added setCustomers to this funciton to test
+    getCustomers();
     setFormObject(blankCustomer);
     log("in onSaveClick()");
   }
