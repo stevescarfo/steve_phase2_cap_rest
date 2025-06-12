@@ -1,11 +1,11 @@
-//const baseURL = "http://localhost:4000/customers";
+const baseURL = "http://localhost:4000/customers";
 
-const baseURL = "https://api.jsonbin.io/v3/qs/684b2a4b8960c979a5a8ca2d";
+// const baseURL = "https://api.jsonbin.io/v3/qs/684b2a4b8960c979a5a8ca2d";
 
 export async function getAll(setCustomers) {
   const myInit = {
     method: "GET",
-    //mode: "cors",
+    mode: "cors",
   };
   const fetchData = async (url) => {
     try {
@@ -14,8 +14,8 @@ export async function getAll(setCustomers) {
         throw new Error(`Error fetching data: ${response.status}`);
       }
       const data = await response.json();
-      setCustomers(data.record);
-      //setCustomers(data);
+    //   setCustomers(data.record);
+      setCustomers(data);
     } catch (error) {
       alert(error);
     }
@@ -35,8 +35,8 @@ export async function get(id, setCustomer) {
         throw new Error(`Error fetching data: ${response.status}`);
       }
       const data = await response.json();
-      //setCustomer(data);
-      setCustomer(data.record);
+      setCustomer(data);
+    //   setCustomer(data.record);
     } catch (error) {
       alert(error);
     }
@@ -77,8 +77,8 @@ export async function post(item, callback) {
         throw new Error(`Error posting data: ${response.status}`);
       }
       const data = await response.json();
-      //callback(data);
-      callback(data.record);
+      callback(data);
+    //   callback(data.record);
     } catch (error) {
       alert(error);
     }
@@ -100,8 +100,8 @@ export async function put(id, item, callback) {
         throw new Error(`Error updating data: ${response.status}`);
       }
       const data = await response.json();
-      //callback(data);
-      callback(data.record);
+      callback(data);
+    //   callback(data.record);
     } catch (error) {
       alert(error);
     }
@@ -119,8 +119,8 @@ export async function getCustomerById(id, callback) {
       const response = await fetch(url, myInit);
       if (response.ok) {
         const data = await response.json();
-        //callback(data);
-        callback(data.record);
+        callback(data);
+        // callback(data.record);
       } else if (response.status === 404) {
         // Not found
         callback(null);
