@@ -54,15 +54,31 @@ export function App() {
 
   function onSaveClick() {
     if (mode === "Add") {
-      post(formObject);
+      // Remove id before POSTing
+      const { id, ...customerWithoutId } = formObject;
+      post(customerWithoutId, () => {
+        getCustomers();
+        setFormObject(blankCustomer);
+      });
     } else {
-      put(formObject, formObject);
-      // put(formObject.id, formObject);
+      put(formObject.id, formObject, () => {
+        getCustomers();
+        setFormObject(blankCustomer);
+      });
     }
-    getCustomers();
-    setFormObject(blankCustomer);
     log("in onSaveClick()");
   }
+
+  // function onSaveClick() {
+  //   if (mode === "Add") {
+  //     post(formObject);
+  //   } else {
+  //     put(formObject.id, formObject);
+  //   }
+  //   getCustomers();
+  //   setFormObject(blankCustomer);
+  //   log("in onSaveClick()");
+  // }
 
   return (
     <div>
