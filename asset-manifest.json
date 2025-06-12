@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/steve_phase2_cap_rest/static/css/main.1c9b3e01.css",
-    "main.js": "/steve_phase2_cap_rest/static/js/main.50f4f284.js",
+    "main.js": "/steve_phase2_cap_rest/static/js/main.c3da9e60.js",
     "index.html": "/steve_phase2_cap_rest/index.html",
     "main.1c9b3e01.css.map": "/steve_phase2_cap_rest/static/css/main.1c9b3e01.css.map",
-    "main.50f4f284.js.map": "/steve_phase2_cap_rest/static/js/main.50f4f284.js.map"
+    "main.c3da9e60.js.map": "/steve_phase2_cap_rest/static/js/main.c3da9e60.js.map"
   },
   "entrypoints": [
     "static/css/main.1c9b3e01.css",
-    "static/js/main.50f4f284.js"
+    "static/js/main.c3da9e60.js"
   ]
 }
