@@ -58,7 +58,8 @@ export function App() {
     } else {
       put(formObject.id, formObject);
     }
-    getCustomers();
+    getCustomers(setCustomers);
+    //added setCustomers to this funciton to test
     setFormObject(blankCustomer);
     log("in onSaveClick()");
   }
