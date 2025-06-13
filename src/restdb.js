@@ -14,8 +14,8 @@ export async function getAll(setCustomers) {
         throw new Error(`Error fetching data: ${response.status}`);
       }
       const data = await response.json();
-      // setCustomers(data.record);
-      setCustomers(data);
+      setCustomers(data.record);
+      // setCustomers(data);
     } catch (error) {
       alert(error);
     }
