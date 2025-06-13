@@ -1,6 +1,6 @@
-const baseURL = "http://localhost:4000/customers";
+// const baseURL = "http://localhost:4000/customers";
 
-// const baseURL = "https://api.jsonbin.io/v3/qs/684b2a4b8960c979a5a8ca2d";
+const baseURL = "https://api.jsonbin.io/v3/qs/684c437d8960c979a5a94c9a";
 
 export async function getAll(setCustomers) {
   const myInit = {
@@ -14,7 +14,7 @@ export async function getAll(setCustomers) {
         throw new Error(`Error fetching data: ${response.status}`);
       }
       const data = await response.json();
-    //   setCustomers(data.record);
+      //   setCustomers(data.record);
       setCustomers(data);
     } catch (error) {
       alert(error);
@@ -36,7 +36,7 @@ export async function get(id, setCustomer) {
       }
       const data = await response.json();
       setCustomer(data);
-    //   setCustomer(data.record);
+      //   setCustomer(data.record);
     } catch (error) {
       alert(error);
     }
@@ -78,7 +78,7 @@ export async function post(item, callback) {
       }
       const data = await response.json();
       callback(data);
-    //   callback(data.record);
+      //   callback(data.record);
     } catch (error) {
       alert(error);
     }
@@ -101,7 +101,7 @@ export async function put(id, item, callback) {
       }
       const data = await response.json();
       callback(data);
-    //   callback(data.record);
+      //   callback(data.record);
     } catch (error) {
       alert(error);
     }
